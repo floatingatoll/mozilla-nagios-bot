@@ -237,7 +237,7 @@ class MozillaNagiosStatus:
             dict_object = self.ackable_list[int(options.group(1)) - self.list_offset]
             host = dict_object['host']
         except Exception, e:
-            return event.target, "%s: unable to inventory system index %s" % (event.source, e)
+            return event.target, "%s: unable to resolve system index %s" % (event.source, e)
         url = self.inventory_system_url(host)
         if url is not None:
             return event.target, "%s: %s" % (event.source, url)
