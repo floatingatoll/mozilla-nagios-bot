@@ -240,7 +240,7 @@ class MozillaNagiosStatus:
             return event.target, "%s: unable to inventory system index %s" % (event.source, e)
         url = self.inventory_system_url(host)
         if url is not None:
-            return event.target, "%s: inventory system %s is at %s" % (event.source, host, url)
+            return event.target, "%s: %s" % (event.source, url)
         else:
             return event.target, "%s: unable to inventory system index %s" % (event.source, host)
 
@@ -248,7 +248,7 @@ class MozillaNagiosStatus:
         host = options.group(1)
         url = self.inventory_system_url(host)
         if url is not None:
-            return event.target, "%s: inventory system %s is at %s" % (event.source, host, url)
+            return event.target, "%s: %s" % (event.source, url)
         else:
             return event.target, "%s: unable to inventory system index %s" % (event.source, host)
 
