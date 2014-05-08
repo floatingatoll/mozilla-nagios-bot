@@ -242,7 +242,7 @@ class MozillaNagiosStatus:
         if url is not None:
             return event.target, "%s: %s" % (event.source, url)
         else:
-            return event.target, "%s: unable to inventory system index %s" % (event.source, host)
+            return event.target, "%s: unable to create inv url for host %s" % (event.source, host)
 
     def get_inventory_system_by_name(self, event, message, options):
         host = options.group(1)
@@ -250,7 +250,7 @@ class MozillaNagiosStatus:
         if url is not None:
             return event.target, "%s: %s" % (event.source, url)
         else:
-            return event.target, "%s: unable to inventory system index %s" % (event.source, host)
+            return event.target, "%s: unable to create inv url for host %s" % (event.source, host)
 
     def downtime_by_index(self, event, message, options):
         timestamp = int(time.time())
